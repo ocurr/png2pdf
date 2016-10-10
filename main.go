@@ -18,7 +18,9 @@ func main() {
 		return
 	}
 
-	outPdf = inImg[:(len(inImg)-4)] + ".pdf"
+	if outPdf == "" {
+		outPdf = inImg[:(len(inImg)-4)] + ".pdf"
+	}
 
 	pdf := gofpdf.New("P", "mm", "A4", "")
 	pdf.SetMargins(10, 10, 10)
